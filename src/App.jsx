@@ -1,14 +1,15 @@
 import { useContext } from "react"
 import CounterContext from "./context/CounterContext"
+import Actions from "./components/Actions"
 
 function App() {
-  const {count, setCount} = useContext(CounterContext)
-
+  const {state} = useContext(CounterContext)
+  
   return (
     <div>
       <h2>Counter</h2>
-      <p>{count}</p>
-      <button onClick={()=> setCount(count+1)}>+</button>
+      <p>{state}</p>
+      <Actions/>
     </div>
   )
 }
