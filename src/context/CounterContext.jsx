@@ -1,18 +1,15 @@
-import { Children, createContext } from "react";
+import { createContext, useState } from "react";
 
-const counterReducer = (state, action) => {
-    switch (action.type) {
-      case 'INCREMENT':
-        return state + 1
-      case 'DECREMENT':
-        return state - 1
-      case 'ZERO':
-        return 0
-      default:
-        return state
-    }
-  }
+const CounterContext = createContext()
 
-const CounterContext = createContext({children})
+export const CounterContextProvider = ({children})=>{
+  const [count, setCount] = useState(0)
+
+  return(
+    <CounterContext.Provider value={{count, setCount}}>
+      {children}
+    </CounterContext.Provider>
+  )
+}
 
 export default CounterContext
