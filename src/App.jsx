@@ -19,6 +19,9 @@ function App() {
     <div>
       <h2>useReducer usage</h2>
       <p>{state}</p>
+      <button onClick={()=> dispatch({type:'INCREMENT'})}>+</button>
+      <button onClick={()=> dispatch({type:'DECREMENT'})}>-</button>
+      <button onClick={()=> dispatch({type:'ZERO'})}>0</button>
     </div>
   )
 }
