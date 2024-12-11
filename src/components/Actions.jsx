@@ -2,13 +2,13 @@ import { useContext } from 'react'
 import CounterContext from '../context/CounterContext'
 
 function Actions() {
-    const {dispatch} = useContext(CounterContext)
+    const {increment, decrement, setZero} = useContext(CounterContext)
     
   return (
     <div>
-      <button onClick={()=> dispatch({type:'INC'})}>+</button>
-      <button onClick={()=> dispatch({type:'ZERO'})}>0</button>
-      <button onClick={()=> dispatch({type:'DEC'})}>-</button>
+      <button onClick={()=> increment()}>+</button>
+      <button onClick={()=> setZero()}>0</button>
+      <button onClick={()=> decrement()}>-</button>
     </div>
   )
 }

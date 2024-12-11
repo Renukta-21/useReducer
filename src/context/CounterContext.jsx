@@ -18,8 +18,12 @@ const counterReducer = (state, action) => {
 export const CounterContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(counterReducer, 0)
 
+  const increment=()=>dispatch({type:'INC'})
+  const decrement=()=>dispatch({type:'DEC'})
+  const setZero=()=>dispatch({type:'ZERO'})
+
   return (
-    <CounterContext.Provider value={{ state, dispatch }}>
+    <CounterContext.Provider value={{ state, increment, decrement, setZero }}>
       {children}
     </CounterContext.Provider>
   )
